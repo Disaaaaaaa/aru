@@ -135,8 +135,10 @@ export function MuseumMap() {
     return (
       <g className="map-node" onClick={() => go(id)} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && go(id)} aria-label={`${title} ${sub || ''}`}>
         <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx="12" fill={cur ? 'color-mix(in srgb, var(--accent) 22%, var(--panel-solid))' : 'var(--panel-solid)'} stroke={st.complete ? 'var(--good)' : 'var(--line)'} strokeWidth="1.5" />
-        <text x={x} y={sub ? y - 7 : y + 1} textAnchor="middle" dominantBaseline="central" fill="var(--ink)" fontFamily="var(--serif)" fontSize={sub ? 20 : 19} fontWeight="700">{title}</text>
-        {sub && <text x={x} y={y + 15} textAnchor="middle" dominantBaseline="central" fill="var(--ink-dim)" fontFamily="var(--sans)" fontSize="11.5">{sub}</text>}
+        <text x={x} y={sub ? y - (Array.isArray(sub) ? 14 : 7) : y + 1} textAnchor="middle" dominantBaseline="central" fill="var(--ink)" fontFamily="var(--serif)" fontSize={sub ? 20 : 19} fontWeight="700">{title}</text>
+        {sub && [].concat(sub).map((line, i, all) => (
+          <text key={i} x={x} y={y + (all.length > 1 ? 8 + i * 14 : 15)} textAnchor="middle" dominantBaseline="central" fill="var(--ink-dim)" fontFamily="var(--sans)" fontSize="11.5">{line}</text>
+        ))}
         <text x={x + w / 2 - 12} y={y - h / 2 + 13} textAnchor="end" fill={st.complete ? 'var(--good)' : 'var(--ink-faint)'} fontFamily="var(--mono)" fontSize="10">{st.n}/{st.total}</text>
         {cur && <circle cx={x - w / 2 + 12} cy={y - h / 2 + 12} r="4" fill="var(--accent)"><animate attributeName="r" values="3;6;3" dur="1.6s" repeatCount="indefinite" /></circle>}
       </g>
@@ -158,7 +160,7 @@ export function MuseumMap() {
               {node('intro', 380, 40, 240, 44, 'ҒЫЛЫМ ТАРИХЫ')}
               {node('corridor', 380, 140, 260, 44, 'УАҚЫТ ДӘЛІЗІ')}
               {node('hall61', 130, 280, 220, 78, '6.1', 'Ғылым тарихының маңызы')}
-              {node('hall62', 380, 280, 220, 78, '6.2', 'Ғалым және ғылым тарихы')}
+              {node('hall62', 380, 280, 220, 78, '6.2', ['Ғылым тарихының ғалымдар', 'үшін өзектілігі'])}
               {node('hall63', 630, 280, 220, 78, '6.3', 'Қазіргі мәселелер')}
               {node('final', 380, 425, 280, 56, 'БОЛАШАҚ ҒЫЛЫМ', 'Қорытынды зал')}
             </svg>

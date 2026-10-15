@@ -4,7 +4,7 @@ export const SECTIONS = [
   { id: 'intro', short: 'Кіріспе', title: 'Кіреберіс', mapLabel: 'ҒЫЛЫМ ТАРИХЫ' },
   { id: 'corridor', short: 'Уақыт дәлізі', title: 'Ғылымның уақыт дәлізі', mapLabel: 'УАҚЫТ ДӘЛІЗІ' },
   { id: 'hall61', short: '6.1 Маңызы', title: 'Ғылым тарихының маңызы', mapLabel: '6.1' },
-  { id: 'hall62', short: '6.2 Ғалым үшін', title: 'Ғалым және ғылым тарихы', mapLabel: '6.2' },
+  { id: 'hall62', short: '6.2 Ғалым үшін', title: 'Ғылым тарихының ғалымдар үшін өзектілігі', mapLabel: '6.2' },
   { id: 'hall63', short: '6.3 Мәселелер', title: 'Қазіргі мәселелер', mapLabel: '6.3' },
   { id: 'final', short: 'Қорытынды', title: 'Болашақ ғылым · Қорытынды', mapLabel: 'БОЛАШАҚ ҒЫЛЫМ' },
 ]

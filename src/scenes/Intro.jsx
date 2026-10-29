@@ -133,6 +133,14 @@ export default function Intro() {
       <div className="intro-bottom">
         <button className="scroll-cue" onClick={() => go('corridor')}>Ғылым тарихына саяхат<span>↓</span></button>
       </div>
+      <motion.aside className="intro-credits" aria-label="Жоба авторлары" initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.3, duration: 0.8 }}>
+        <div className="credits-group">ПМНО-26-1м</div>
+        <div className="credits-k">Магистранттар:</div>
+        <ul>
+          <li>Съездқызы Аружан</li>
+          <li>Маханбетқали Аружан</li>
+        </ul>
+      </motion.aside>
       <div className="intro-legend">Объектіге курсорды апарыңыз<br />астролябиядан жасанды интеллектке дейін</div>
     </section>
   )

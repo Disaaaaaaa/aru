@@ -546,3 +546,22 @@ p { margin: 0; }
 .hall-enter { animation: hallEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1) both; }
 @keyframes hallEnter { from { opacity: 0; } to { opacity: 1; } }
 .corridor-stage { background: radial-gradient(ellipse at 50% 60%, #3a2c1a, #120d08 70%); }
+
+/* басты беттегі авторлар тақтайшасы */
+.intro-credits {
+  position: absolute; left: 26px; bottom: 28px; z-index: 3;
+  padding: 14px 18px 14px 16px; border-radius: 12px; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  background: var(--panel); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.credits-group { font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: var(--accent); }
+.credits-k { font-size: 12px; color: var(--ink-faint); margin-top: 6px; }
+.intro-credits ul { list-style: none; margin: 2px 0 0; padding: 0; font-family: var(--serif); font-size: 19px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+@media (max-width: 720px) {
+  .intro-credits {
+    left: 16px; right: 16px; bottom: 96px; padding: 8px 12px; border-left-width: 1px; border-top: 3px solid var(--accent);
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 2px 8px; text-align: center;
+  }
+  .credits-group { font-size: 12px; }
+  .credits-k { margin-top: 0; }
+  .intro-credits ul { font-size: 15px; display: flex; flex-wrap: wrap; justify-content: center; column-gap: 10px; margin: 0; }
+}
